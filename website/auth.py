@@ -38,7 +38,7 @@ def logout():
 def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
-        first_name = request.form.get('firstName')
+        name = request.form.get('name')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
@@ -47,7 +47,7 @@ def sign_up():
             flash('Email already exists.', category='error')
         elif len(email) < 9:
             flash('Email must be greater than 9 characters.', category='error')
-        elif len(first_name) < 3:
+        elif len(name) < 3:
             flash('First name must be greater than 3 character.', category='error')
         elif password1 != password2:
             flash('Passwords don\'t match.', category='error')
